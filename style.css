@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script&family=Sigmar+One&display=swap');
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+section{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+section video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 80px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .Logo{
+    position: relative;
+    font-size: 35px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+    transition: 0.5sec;
+}
+
+header .toggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url('menu-bar1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}    
+
+header .toggle::before{
+   content: 'Menu';
+   position: absolute;
+   right: 49px;
+   text-transform: uppercase;
+   color: white;
+   font-size: 22px;
+   padding: 5px;
+   background: black;
+}
+
+header .toggle.active{
+    background: url('close1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 43px;
+    width: 38pxpx;
+    height: 38px;
+}
+
+header .toggle.active::before{
+    content: 'CLOSE';
+}
+
+.glass{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.2sec;
+    transition-delay: 1sec;
+}
+
+section.active .glass{
+    width: 100%;
+    backdrop-filter: blur(20px);
+    transition-delay: 2sec;
+}
+
+
+section .content{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    transition: 0.5s;
+    transition-delay: 1s;
+}
+
+section.active .content{
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-200px);
+    transition-delay: 0.2s ;    
+}
+
+section .content h2{
+    font-family: 'Courgette', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Sigmar One', cursive;
+    position: relative;
+    color: black;
+    font-size: 34px;
+    font-weight: 800;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.432);
+}
+
+section .social{
+    position: absolute;
+    bottom: 40px;
+    right: 75px;
+    display: flex;
+    z-index: 100;
+}
+
+section .social li{
+    list-style: none;
+    padding: 9px;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.black-social{
+    color: black;
+}
+
+
+section.active .social li a{
+     opacity: 0;
+     visibility: hidden;
+     transform: translate(100px);  
+     transition: 1s; 
+}
+
+
+section .navigation{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+}
+
+section .navigation li{
+    list-style: none;
+    text-align: center;
+    margin: 15px 0;   
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: translateX(200px) ; 
+}
+
+section.active .navigation li{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(15px) ; 
+
+}
+
+section .navigation li a{
+    text-decoration: none;
+    font-size: 35px;
+    color: white;
+    background: black;
+    margin: 6px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+@media (max-width:923px){
+    header .Logo{
+        position: relative;
+        font-size: 25px;
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+        transition: 0.5sec;
+    }
+    header .toggle{
+        position: relative;
+        width: 25px;
+        height: 25px;
+        background: url('menu-bar1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        background-size: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
+    header .toggle::before{
+        content: 'Menu';
+        position: absolute;
+        right: 35px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 15px;
+        background: black;
+     }   
+      
+}
+
+@media (max-width:529px){
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .toggle{
+        position: relative;
+        width: 25px;
+        height: 25px;
+        background: url('menu-bar1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        background-size: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    } 
+
+}
+
+@media(max-width:377px){
+    section .content h2{
+        font-family: 'Courgette', cursive;
+        font-family: 'Dancing Script', cursive;
+        font-family: 'Sigmar One', cursive;
+        position: relative;
+        color: black;
+        font-size: 18px;
+        font-weight: 300;
+        text-shadow: 0 5px 5px rgba(0, 0, 0, 0.432);
+    }
+    section .social i{
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
